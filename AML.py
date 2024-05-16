@@ -8,8 +8,8 @@ from joblib import load
 from sklearn.preprocessing import StandardScaler
 
 
-    model = load('aml_model.joblib')
-    scaler = load('aml_scaler.joblib')
+model = load('aml_model.joblib')
+scaler = load('aml_scaler.joblib')
 
 
 
