@@ -8,27 +8,8 @@ from joblib import load
 from sklearn.preprocessing import StandardScaler
 
 
-def download_model():
-    try:
-        if not os.path.exists('aml_model.joblib'):
-            url = 'https://drive.google.com/uc?id=11hST1WP28mmbvgG6FkVUKGEN0diyaAGW'
-            gdown.download(url, 'aml_model.joblib', quiet=False)
-        if not os.path.exists('aml_scaler.joblib'):
-            url = 'https://drive.google.com/uc?id=1nx7fHDOuBtSG4noH106XfOuc5Yag1J11'
-            gdown.download(url, 'aml_scaler.joblib', quiet=False)
-    except Exception as e:
-        st.write(f"Failed to download the model or scaler: {e}")
-
-download_model()
-try:
     model = load('aml_model.joblib')
-except Exception as e:
-    st.write('Model not loaded:', e)
-
-try:
     scaler = load('aml_scaler.joblib')
-except Exception as e:
-    st.write('Scaler not loaded:', e)
 
 
 
